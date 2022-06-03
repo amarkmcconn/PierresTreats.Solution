@@ -1,0 +1,17 @@
+@model PierresTreats.Models.Flavor
+
+<div class="container">
+<h4>Add a new Flavor</h4>
+@* <img id="centeredImage" src='~/img/flavorone.gif'><br> *@
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { required = "required" })<br>
+
+            <br><input type="submit" value="Add new Flavor" class="myCssClass" />   
+        }
+    </div>
+<br>
+<p>@Html.ActionLink("Show all Flavors", "Index", null, null, new {@class = "myCssClass"})</p>
+</div>
