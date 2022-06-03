@@ -2,13 +2,13 @@
 
 <div class="container">
   <h3>Add a new Treat</h3>
-  @* <img id="centeredImage" src='~/img/tag.jpg'><br> *@
+  <img id="centeredImage" src='~/img/treat2.png'><br>
   <div id="table">
     @using (Html.BeginForm())
     {
       @Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, new { required = "required" })
-      <input type="submit" value="Add new Tag" class="btn btn-success" />
+      <input type="submit" value="Add new Treat" class="btn btn-success" />
     }
   </div>
   <p>@Html.ActionLink("Show all treats", "Index", null, null, new {@class = "myCssClass"})</p>

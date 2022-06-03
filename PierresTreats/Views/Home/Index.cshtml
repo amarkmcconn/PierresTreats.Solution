@@ -7,20 +7,20 @@
   <img id="centeredImage" src=img/cookie.gif>
      @if (User.Identity.IsAuthenticated)
       {
-          <h4 align="center">Treats</h4>
-            <ol class="center">
+          <h4><strong>Treats<strong></h4>
+            <ul class="center">
             @foreach (Treat treat in @ViewBag.Treats)
             {
-              <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+              <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId}, new {@class = "myCssClass"})</li>
             }
-            </ol>
-          <h4 align="center">Flavors</h4>
-            <ol class="center">
+            </ul>
+          <h4><strong>Flavors</strong></h4>
+            <ul class="center">
             @foreach (Flavor flavor in @ViewBag.Flavors)
             {
-              <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+              <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId }, new {@class = "myCssClass"})</li>
             }
-            </ol>
+            </ul>
           <table id="table">
             <tr>
               <td>@Html.ActionLink("See all Flavors", "Index", "Flavors", null, new {@class = "myCssClass"})</td> 
