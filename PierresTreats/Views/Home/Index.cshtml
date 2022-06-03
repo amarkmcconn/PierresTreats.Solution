@@ -5,29 +5,34 @@
   <h1><a href="https://fontmeme.com/fonts/bayern-font/"><img src="https://fontmeme.com/permalink/220603/1e74b51db831209f33dda920e67be54e.png" alt="bayern-font" border="0"></a></h1>
   <img id="centeredImage" src=img/treat.gif>
   <img id="centeredImage" src=img/cookie.gif>
+     
      @if (User.Identity.IsAuthenticated)
       {
-          <h4><strong>Treats<strong></h4>
-            <ul class="center">
+        <div id="tableOne">
+          <h4><strong>Treats</strong></h4>
+            <ul>
             @foreach (Treat treat in @ViewBag.Treats)
             {
               <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId}, new {@class = "myCssClass"})</li>
             }
             </ul>
+          </div>
+          <div id="tableOne">
           <h4><strong>Flavors</strong></h4>
-            <ul class="center">
+            <ul>
             @foreach (Flavor flavor in @ViewBag.Flavors)
             {
               <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId }, new {@class = "myCssClass"})</li>
             }
             </ul>
+          </div>   
           <table id="table">
             <tr>
               <td>@Html.ActionLink("See all Flavors", "Index", "Flavors", null, new {@class = "myCssClass"})</td> 
               <td>@Html.ActionLink("See all Treats", "Index", "Treats", null, new {@class = "myCssClass"})</td>
               <td>@Html.ActionLink("Account Info", "Index", "Account", null, new {@class = "myCssClass"})</td>
             </tr>
-          </table>
+          </table>  
       }
       else
       {
