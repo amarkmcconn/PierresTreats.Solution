@@ -1,0 +1,43 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.myCssClass {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  background-color: #0c0224;
+  margin-top: 5px;
+
+  color: solid #0c0224;
+  color:  rgb(176, 88, 7);
+  width: auto;
+  
+
+  padding: 8px 12px;
+  border: none;
+  outline:none;
+  outline:0;
+
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.8);
+}
