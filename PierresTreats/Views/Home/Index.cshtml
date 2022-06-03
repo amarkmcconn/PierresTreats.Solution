@@ -2,7 +2,7 @@
 @using PierresTreats.Models;
 
 <div class="container">
-  <h1><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/42094ebf18b5069ee593ad09f5fefc33.png" alt="arcane-tv-series-font" border="0"></a></a></h1>
+  <h1><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/42094ebf18b5069ee593ad09f5fefc33.png" alt="arcane-tv-series-font" border="0"></a></h1>
   <img id="centeredImage" src=img/treat.gif>
   <h1><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/bfda7ebc7402043720fe6e365cdca49e.png" alt="arcane-tv-series-font" border="0"></a></h1>
   <img id="centeredImage" src=img/cookie.gif>
@@ -39,6 +39,8 @@
       {
         <table id="table">
           <tr>
+            <td>@Html.ActionLink("See all Flavors", "Index", "Flavors", null, new {@class = "myCssClass"})</td> 
+            <td>@Html.ActionLink("See all Treats", "Index", "Treats", null, new {@class = "myCssClass"})</td>
             <br><td>@Html.ActionLink("Create an account", "Index", "Account", null, new {@class = "myCssClass"})</td>
           </tr>
         </table> 

@@ -22,7 +22,8 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
       _db = db;
     }
-
+    // [AllowAnonymous] 
+    // would need to edit userFlavors so isn't using a user to access it.
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
