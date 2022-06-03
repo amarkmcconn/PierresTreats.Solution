@@ -1,10 +1,11 @@
 @using System.Security.Claims
 
 <div class="container">
-  <h2>Please create an account</h2>
-  <hr />
+  
   @if (User.Identity.IsAuthenticated)
   {
+    <h2>Welcome to your account</h2>
+    <img id="centeredImage" src=img/user.jpg>
     <p>Hello @User.Identity.Name!</p>
     @using (Html.BeginForm("LogOff", "Account"))
     {
@@ -15,8 +16,15 @@
   }
   else
   {
-      <p>@Html.ActionLink("Register", "Register")</p>
-      <p>@Html.ActionLink("Log in", "Login")</p>
+  <h2>Please create an account</h2>
+  <img id="centeredImage" src=img/user.jpg>
+  <hr />
+    <table id="table">
+      <tr>
+        <td>@Html.ActionLink("Register", "Register", null, null, new {@class = "myCssClass"})</td>
+        <td>@Html.ActionLink("Log in", "Login", null, null, new {@class = "myCssClass"})</td>
+      </tr>
+    </table>
   }
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  <p>@Html.ActionLink("Home", "Index", "Home", null, new {@class = "myCssClass"})</p>
 </div>
