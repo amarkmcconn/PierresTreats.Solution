@@ -1,10 +1,9 @@
-@using System.Security.Claims
 
 <div class="container">
   
   @if (User.Identity.IsAuthenticated)
   {
-    <h2>Welcome to your account</h2>
+    <h2><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/8b13382923bd419f3085b151b70c6811.png" alt="arcane-tv-series-font" border="0"></a></h2>
     <img id="centeredImage" src=img/user.jpg>
     <p>Hello @User.Identity.Name!</p>
     @using (Html.BeginForm("LogOff", "Account"))
@@ -16,7 +15,7 @@
   }
   else
   {
-  <h2>Please create an account</h2>
+  <h2><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/eee5b7491c5f9f9d387c415c16c26de9.png" alt="arcane-tv-series-font" border="0"></a></h2>
   <img id="centeredImage" src=img/user.jpg>
   <hr />
     <table id="table">

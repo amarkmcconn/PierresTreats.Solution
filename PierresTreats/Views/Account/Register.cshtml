@@ -3,19 +3,23 @@
 @model RegisterViewModel
 
 <div class="container">
-  <h2>Register a new user</h2>
+  <h2>✔️<a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/74b25049674a7031cb4241bdd6b40c69.png" alt="arcane-tv-series-font" border="0"></a> ✔️</h2>
   <hr />
-  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
-  {
-      @Html.LabelFor(user => user.Email)
-      @Html.TextBoxFor(user=> user.Email, new { required = "required" })<br>
+  <img id="centeredImage" src=/img/register.png><br>
+  <div id="table">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.LabelFor(user => user.Email)
+        @Html.TextBoxFor(user=> user.Email, new { required = "required" })<br>
 
-      @Html.LabelFor(user=> user.Password)
-      @Html.PasswordFor(user=> user.Password, new { required = "required" })<br>
+        @Html.LabelFor(user=> user.Password)
+        @Html.PasswordFor(user=> user.Password, new { required = "required" })<br>
 
-      @Html.LabelFor(user=> user.ConfirmPassword)
-      @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br>
+        @Html.LabelFor(user=> user.ConfirmPassword)
+        @Html.PasswordFor(user=> user.ConfirmPassword, new { required = "required" })<br>
 
-      <br><input type="submit" value="Register" />
-  }
+        <br><input type="submit" value="Register" class="btn btn-success"/>
+    }
+    </div>
+  <p>@Html.ActionLink("Home", "Index", "Home", null, new {@class = "myCssClass"})</p>
 </div>

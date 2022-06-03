@@ -2,14 +2,15 @@
 @using PierresTreats.Models;
 
 <div class="container">
-  <h1><a href="https://fontmeme.com/fonts/bayern-font/"><img src="https://fontmeme.com/permalink/220603/1e74b51db831209f33dda920e67be54e.png" alt="bayern-font" border="0"></a></h1>
+  <h1><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/42094ebf18b5069ee593ad09f5fefc33.png" alt="arcane-tv-series-font" border="0"></a></a></h1>
   <img id="centeredImage" src=img/treat.gif>
+  <h1><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/bfda7ebc7402043720fe6e365cdca49e.png" alt="arcane-tv-series-font" border="0"></a></h1>
   <img id="centeredImage" src=img/cookie.gif>
      
      @if (User.Identity.IsAuthenticated)
       {
         <div id="tableOne">
-          <h4><strong>Treats</strong></h4>
+          <h4><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/c2137562907295da4c9eb375378365f2.png" alt="arcane-tv-series-font" border="0"></a></h4>
             <ul>
             @foreach (Treat treat in @ViewBag.Treats)
             {
@@ -18,7 +19,7 @@
             </ul>
           </div>
           <div id="tableOne">
-          <h4><strong>Flavors</strong></h4>
+          <h4><strong><a href="https://fontmeme.com/arcane-tv-series-font/"><img src="https://fontmeme.com/permalink/220603/98bc1a204af16e3d032b2c63d5c84c25.png" alt="arcane-tv-series-font" border="0"></a></strong></h4>
             <ul>
             @foreach (Flavor flavor in @ViewBag.Flavors)
             {
@@ -38,7 +39,7 @@
       {
         <table id="table">
           <tr>
-            <td>@Html.ActionLink("Create an account", "Index", "Account", null, new {@class = "myCssClass"})</td>
+            <br><td>@Html.ActionLink("Create an account", "Index", "Account", null, new {@class = "myCssClass"})</td>
           </tr>
         </table> 
       } 
