@@ -90,3 +90,7 @@ p {
   gap: 100px;
   justify-content: center;
 }
+
+body {
+  background-color: slategray;
+}

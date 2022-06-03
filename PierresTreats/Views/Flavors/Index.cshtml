@@ -2,27 +2,26 @@
 @model IEnumerable<PierresTreats.Models.Flavor>
 
 <div class="container">
-@* <img id="centeredImage" src=img/recipe.gif> *@
-<h3>Flavors for @User.Identity.Name</h3>
-
-@if (Model.Any())
-{
-  <ul>
-    @foreach (Flavor flavor in Model)
-    {
-      <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
-    }
-  </ul>
-} 
-else
-{
-  <h3>No Flavors have been added yet!</h3>
-}
-<table>
-  <tr>
-    <td>@Html.ActionLink("Add new Flavor", "Create", null, null, new {@class = "myCssClass"})</td>
-    <td>@Html.ActionLink("Add new Treat", "Create", "Treats", null, new {@class = "myCssClass"})</td>
-    <td>@Html.ActionLink("Home", "Index", "Home", null, new {@class = "myCssClass"})</td>
-  </tr>
-</table>
+  <h3><a href="https://fontmeme.com/fonts/bayern-font/"><img src="https://fontmeme.com/permalink/220603/882ba827b1522beb8e56aaf8c5d5f4e1.png" alt="bayern-font" border="0"></a>for @User.Identity.Name</h3>
+  <img id="centeredImage" src=img/flavor.gif>
+  @if (Model.Any())
+  {
+    <ul>
+      @foreach (Flavor flavor in Model)
+      {
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+      }
+    </ul>
+  } 
+  else
+  {
+    <h3>No Flavors have been added yet!</h3>
+  }
+  <table id="table">
+    <tr>
+      <td>@Html.ActionLink("Add new Flavor", "Create", null, null, new {@class = "myCssClass"})</td>
+      <td>@Html.ActionLink("Add new Treat", "Create", "Treats", null, new {@class = "myCssClass"})</td>
+      <td>@Html.ActionLink("Home", "Index", "Home", null, new {@class = "myCssClass"})</td>
+    </tr>
+  </table>
 </div>
