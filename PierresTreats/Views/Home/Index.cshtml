@@ -2,39 +2,39 @@
 @using PierresTreats.Models;
 
 <div class="container">
-  <h1></h1>
-  <img >
-  
-  @if (User.Identity.IsAuthenticated)
-  {
-    <h4 align="center">Treats</h4>
-      <ol class="center">
-      @foreach (Treat treat in @ViewBag.Treats)
+  <h1><a href="https://fontmeme.com/fonts/bayern-font/"><img src="https://fontmeme.com/permalink/220603/1e74b51db831209f33dda920e67be54e.png" alt="bayern-font" border="0"></a></h1>
+  <img id="centeredImage" src=img/treat.gif>
+  <img id="centeredImage" src=img/cookie.gif>
+     @if (User.Identity.IsAuthenticated)
       {
-        <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+          <h4 align="center">Treats</h4>
+            <ol class="center">
+            @foreach (Treat treat in @ViewBag.Treats)
+            {
+              <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+            }
+            </ol>
+          <h4 align="center">Flavors</h4>
+            <ol class="center">
+            @foreach (Flavor flavor in @ViewBag.Flavors)
+            {
+              <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+            }
+            </ol>
+          <table id="table">
+            <tr>
+              <td>@Html.ActionLink("See all Flavors", "Index", "Flavors", null, new {@class = "myCssClass"})</td> 
+              <td>@Html.ActionLink("See all Treats", "Index", "Treats", null, new {@class = "myCssClass"})</td>
+              <td>@Html.ActionLink("Account Info", "Index", "Account", null, new {@class = "myCssClass"})</td>
+            </tr>
+          </table>
       }
-      </ol>
-    <h4 align="center">Flavors</h4>
-      <ol class="center">
-      @foreach (Flavor flavor in @ViewBag.Flavors)
+      else
       {
-        <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
-      }
-      </ol>  
-    <table>
-      <tr>
-        <td>@Html.ActionLink("See all Flavors", "Index", "Flavors", null, new {@class = "myCssClass"})</td> 
-        <td>@Html.ActionLink("See all Treats", "Index", "Treats", null, new {@class = "myCssClass"})</td>
-        <td>@Html.ActionLink("Account Info", "Index", "Account", null, new {@class = "myCssClass"})</td>
-      </tr>
-    </table>
-  }
-  else
-  {
-    <table>
-      <tr>
-        <td>@Html.ActionLink("Create an account", "Index", "Account", null, new {@class = "myCssClass"})</td>
-      </tr>
-    </table> 
-  }  
+        <table id="table">
+          <tr>
+            <td>@Html.ActionLink("Create an account", "Index", "Account", null, new {@class = "myCssClass"})</td>
+          </tr>
+        </table> 
+      } 
 </div>
