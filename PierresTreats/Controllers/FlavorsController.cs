@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using System.Collections.Generic;
 
 namespace PierresTreats.Controllers
 {
@@ -22,14 +23,15 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
       _db = db;
     }
-    // [AllowAnonymous] 
-    // would need to edit userFlavors so isn't using a user to access it.
-    public async Task<ActionResult> Index()
+    [AllowAnonymous] 
+    public ActionResult Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userFlavors);
+      // keeping code to be able to switch to full authorized users
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // var currentUser = await _userManager.FindByIdAsync(userId);
+      // var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      List<Flavor> model = _db.Flavors.ToList();
+      return View(model);
     }
 
     public ActionResult Create()
@@ -47,7 +49,7 @@ namespace PierresTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors
